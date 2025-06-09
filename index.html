@@ -22,8 +22,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* Animación degradado azul-blanco */
     .animated-text {
       background: linear-gradient(270deg, #0066FF, #ffffff, #0066FF);
       background-size: 600% 600%;
@@ -31,7 +29,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     @keyframes gradientMove {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -39,13 +36,33 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-[Inter]">
+<body class="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-sans antialiased">
   <header class="p-6 flex justify-between items-center glass rounded-2xl m-4">
     <h1 class="text-2xl font-extrabold tracking-tight">Big Solutions</h1>
-    <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl font-semibold text-white">Contacto</a>
+    
+    <!-- Menú Desktop -->
+    <nav class="hidden md:flex gap-6 items-center">
+      <a href="#paginas" class="hover:text-blue-400">Páginas</a>
+      <a href="#disenos" class="hover:text-blue-400">Diseños</a>
+      <a href="#contacto" class="hover:text-blue-400">Contacto</a>
+    </nav>
+
+    <!-- Menú Hamburguesa -->
+    <div class="md:hidden relative">
+      <button id="menu-toggle" class="focus:outline-none">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <div id="mobile-menu" class="absolute right-0 mt-2 w-48 glass rounded-xl py-4 px-6 shadow-lg hidden z-50">
+        <a href="#paginas" class="block text-white hover:text-blue-400 font-semibold mb-2">Páginas</a>
+        <a href="#disenos" class="block text-white hover:text-blue-400 font-semibold mb-2">Diseños</a>
+        <a href="#contacto" class="block text-white hover:text-blue-400 font-semibold">Contacto</a>
+      </div>
+    </div>
   </header>
 
-  <section class="text-center py-20 px-6 fade-in">
+  <section id="paginas" class="text-center py-20 px-6 fade-in">
     <h2 class="text-4xl font-extrabold mb-6">¿Necesitas una página web?</h2>
     <p class="text-lg max-w-xl mx-auto mb-10">Desde una página estática básica hasta soluciones más avanzadas, todo adaptado a tus necesidades y presupuesto. Desarrollo profesional desde <span class="font-bold animated-text">20€ hasta 300€</span>.</p>
     <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -65,6 +82,13 @@
         <p class="mt-2 animated-text font-bold">Hasta 300€</p>
       </div>
     </div>
+    
+    <div class="text-center mt-10">
+  <a href="paginas.html" class="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 text-lg rounded-full font-semibold shadow-xl transition-transform hover:scale-105 text-white">
+    Ver ejemplos
+  </a>
+</div>
+    
   </section>
 
   <section class="py-16 px-6 bg-black bg-opacity-5 rounded-2xl mx-4 my-10 text-center fade-in">
@@ -83,13 +107,13 @@
     </div>
   </section>
 
-  <section class="py-20 px-6 fade-in text-center">
+  <section id="disenos" class="py-20 px-6 fade-in text-center">
     <h2 class="text-3xl font-extrabold mb-10">Otros servicios de diseño</h2>
     <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="glass p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform text-left">
-        <h3 class="text-xl font-semibold mb-2">Flyer digital o para imprimir</h3>
+        <h3 class="text-xl font-semibold mb-2">Diseño digital o para imprimir</h3>
         <p class="animated-text font-bold mb-2">Desde 15,00 €</p>
-        <p>Diseño creativo, adaptado a tu marca y mensaje.</p>
+        <p>Creativo, adaptado a tu marca y mensaje.</p>
         <p class="mt-2 text-sm opacity-80">Incluye: 1 cara, resolución alta, formato JPG/PDF.</p>
       </div>
       <div class="glass p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform text-left">
@@ -98,7 +122,14 @@
         <p>Creatividad lista para destacar en redes sociales. Promociones o lanzamientos.</p>
         <p class="mt-2 text-sm opacity-80">Incluye: Formato vertical, colores y tipografía de marca.</p>
       </div>
-    </div>
+       </div>
+          
+<div class="text-center mt-10">
+  <a href="diseños.html" class="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 text-lg rounded-full font-semibold shadow-xl transition-transform hover:scale-105 text-white">
+    Ver ejemplos
+  </a>
+</div>
+  
   </section>
 
   <section id="contacto" class="py-20 px-6 bg-black bg-opacity-5 rounded-t-3xl mt-20">
@@ -114,5 +145,20 @@
   <footer class="text-center text-sm py-6 opacity-60">
     &copy; 2025 BigSolutions. Todos los derechos reservados.
   </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    // Cierra el menú hamburguesa al hacer clic en un enlace
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+  </script>
 </body>
 </html>
