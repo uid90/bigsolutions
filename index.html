@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,41 +22,56 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Animación degradado azul-blanco */
+    .animated-text {
+      background: linear-gradient(270deg, #0066FF, #ffffff, #0066FF);
+      background-size: 600% 600%;
+      animation: gradientMove 6s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white font-[Inter]">
   <header class="p-6 flex justify-between items-center glass rounded-2xl m-4">
     <h1 class="text-2xl font-extrabold tracking-tight">Big Solutions</h1>
-    <a href="#contacto" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-xl font-semibold">Contacto</a>
+    <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl font-semibold text-white">Contacto</a>
   </header>
 
   <section class="text-center py-20 px-6 fade-in">
     <h2 class="text-4xl font-extrabold mb-6">¿Necesitas una página web?</h2>
-    <p class="text-lg max-w-xl mx-auto mb-10">Desde una página estática básica hasta soluciones más avanzadas, todo adaptado a tus necesidades y presupuesto. Desarrollo profesional desde <span class="font-bold text-green-400">20€ hasta 300€</span>.</p>
+    <p class="text-lg max-w-xl mx-auto mb-10">Desde una página estática básica hasta soluciones más avanzadas, todo adaptado a tus necesidades y presupuesto. Desarrollo profesional desde <span class="font-bold animated-text">20€ hasta 300€</span>.</p>
     <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <div class="glass p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform">
         <h3 class="text-xl font-semibold mb-2">Sitio Básico</h3>
         <p>Ideal para portfolios o presentación simple. Responsive y elegante.</p>
-        <p class="mt-2 text-green-400 font-bold">Desde 20€</p>
+        <p class="mt-2 animated-text font-bold">Desde 20€</p>
       </div>
       <div class="glass p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform">
         <h3 class="text-xl font-semibold mb-2">Web Corporativa</h3>
         <p>Para empresas o negocios. Integración de secciones y animaciones.</p>
-        <p class="mt-2 text-green-400 font-bold">Desde 100€</p>
+        <p class="mt-2 animated-text font-bold">Desde 100€</p>
       </div>
       <div class="glass p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform">
         <h3 class="text-xl font-semibold mb-2">Soluciones Avanzadas</h3>
         <p>Con formularios, tiendas, bases de datos y más.</p>
-        <p class="mt-2 text-green-400 font-bold">Hasta 300€</p>
+        <p class="mt-2 animated-text font-bold">Hasta 300€</p>
       </div>
     </div>
   </section>
 
-  <section class="py-16 px-6 bg-white bg-opacity-5 rounded-2xl mx-4 my-10 text-center fade-in">
+  <section class="py-16 px-6 bg-black bg-opacity-5 rounded-2xl mx-4 my-10 text-center fade-in">
     <div class="max-w-2xl mx-auto">
       <h3 class="text-2xl font-bold mb-4">Información importante</h3>
       <p class="mb-4">El desarrollo web se inicia una vez se ha recibido <strong>TODOS</strong> los materiales. A partir de ese momento comienza el tiempo de realización estipulado en cada plan.</p>
-      <p>Los cambios que haya que efectuar tras el número de revisiones que permite cada plan se tarificarán como horas extras (<span class="font-semibold text-green-400">21 €/hora</span>).</p>
+      <p>Los cambios que haya que efectuar tras el número de revisiones que permite cada plan se tarificarán como horas extras (<span class="font-semibold animated-text">21 €/hora</span>).</p>
     </div>
   </section>
 
@@ -72,26 +88,26 @@
     <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <div class="glass p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform text-left">
         <h3 class="text-xl font-semibold mb-2">Flyer digital o para imprimir</h3>
-        <p class="text-green-400 font-bold mb-2">Desde 15,00 €</p>
+        <p class="animated-text font-bold mb-2">Desde 15,00 €</p>
         <p>Diseño creativo, adaptado a tu marca y mensaje.</p>
         <p class="mt-2 text-sm opacity-80">Incluye: 1 cara, resolución alta, formato JPG/PDF.</p>
       </div>
       <div class="glass p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform text-left">
         <h3 class="text-xl font-semibold mb-2">Diseño para Historias y Publicaciones</h3>
-        <p class="text-green-400 font-bold mb-2">Desde 10,00 €</p>
+        <p class="animated-text font-bold mb-2">Desde 10,00 €</p>
         <p>Creatividad lista para destacar en redes sociales. Promociones o lanzamientos.</p>
         <p class="mt-2 text-sm opacity-80">Incluye: Formato vertical, colores y tipografía de marca.</p>
       </div>
     </div>
   </section>
 
-  <section id="contacto" class="py-20 px-6 bg-white bg-opacity-5 rounded-t-3xl mt-20">
+  <section id="contacto" class="py-20 px-6 bg-black bg-opacity-5 rounded-t-3xl mt-20">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">¿Te interesa?</h2>
       <p class="mb-8">Hablemos directamente por WhatsApp. Cuéntame qué tipo de web necesitas y te ayudaré encantado.</p>
-<a href="https://wa.me/34637068246?text=Hola%2C%20estoy%20interesad%40%20en%20uno%20de%20tus%20servicios" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 px-6 py-3 text-lg rounded-full font-semibold shadow-xl transition-transform hover:scale-105">
-  Enviar WhatsApp
-</a>
+      <a href="https://wa.me/34637068246?text=Hola%2C%20estoy%20interesad%40%20en%20uno%20de%20tus%20servicios" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 text-lg rounded-full font-semibold shadow-xl transition-transform hover:scale-105 text-white">
+        Enviar WhatsApp
+      </a>
     </div>
   </section>
 
